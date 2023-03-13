@@ -9,6 +9,9 @@
 
 const randomNumbers = [10, 30, 15, 25, 50, 40, 5]
 
+const imparNumbers = randomNumbers.filter(item => item % 2 == 1)
+console.log(imparNumbers)
+
 /*
   02
 
@@ -16,6 +19,10 @@ const randomNumbers = [10, 30, 15, 25, 50, 40, 5]
 */
 
 const crazyNumbers = [937, 5, 395, 402, 501, 333, 502, 781, 3, 691]
+
+const numberMinimus = crazyNumbers.reduce((accumulator, crazyNumber) =>
+  crazyNumber < 501 ? accumulator + 1 : accumulator, 0)
+  console.log(numberMinimus)
 
 /*
   03
@@ -27,6 +34,9 @@ const crazyNumbers = [937, 5, 395, 402, 501, 333, 502, 781, 3, 691]
 */
 
 const numbers = [5, 7, 3]
+
+const numberExps = numbers.map(numberExp => numberExp ** 2)
+console.log(numberExps)
 
 /*
   04
@@ -49,9 +59,11 @@ const tarantinoMovies = [
   { name: 'Kill Bill: Volume 1', release: 2003 }
 ]
 
+const listMovies = tarantinoMovies.filter(({release}) => release < 2000)
+console.log(listMovies)
+
 /*
   05
-
   - Gere um novo array que contém apenas os nomes das séries abaixo;
   - Exiba o novo array no console.    
 */
@@ -65,6 +77,9 @@ const tvShows = [
   { name: 'House M.D.', releaseYear: 2004 },
   { name: 'Watchmen', releaseYear: 2019 }
 ]
+
+const nameSeries = tvShows.map(({name}) => name)
+console.log(nameSeries)
 
 /*
   06
@@ -101,3 +116,8 @@ gerando. Não é o objetivo final do exercício.
 O objetivo final NÃO É executar um console.log para cada nome. Mas sim gerar 
 uma única string que contém uma lista exatamente como o exemplo acima. 
 */
+
+const productList = cart.reduce((accumulator, product) =>`${accumulator} - ${product.name}\n`,'')
+console.log(productList)
+
+
